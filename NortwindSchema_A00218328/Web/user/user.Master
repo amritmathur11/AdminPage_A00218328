@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="user.master.cs" Inherits="Web.user.user" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>User Portal: Cloth House Shop</title>
+     <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../css/MyStyle.css" rel="stylesheet" />
+    <script src="../js/bootstrap.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        
+<div class="container"  id="OutterBox">
+    	<div class="row bg-info text-right" style="padding-right:10px;" id="LoginBar">        
+        welcome: <b><asp:Label ID="lbl_name" runat="server" Text=""></asp:Label> </b><small><a href="../login.aspx?logout">Logout</a></small>       
+        </div>
+        
+        <div class="row" style="  padding-left:1%; background-image:url('../img/admin_banner_2.jpg'); color:#fff; min-height:300px; background-size:100% 100%; padding-top:100px;">
+        <h1><u>
+        <asp:ContentPlaceHolder ID="header" runat="server">
+        
+        </asp:ContentPlaceHolder>
+            </u></h1>    
+        </div>
+        
+        <div class="row">
+        	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <span class="navbar-brand">Cloth House Shop</span>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+	     <%--<li><a href="default.aspx">Home</a></li>--%>
+		 <li><a href="orders.aspx">Orders</a></li>     
+        <li><a href="products.aspx">Products</a></li>         
+        <li><a href="stock.aspx">Stock</a></li>                          
+      </ul>      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+        </div>
+        
+        	<section>
+            	<div class="row">
+
+                    <div class="panel panel-default"><div class="panel-body">
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder></div>    
+                        </div></div>
+
+
+            </section>
+        
+       
+	</div>
+
+
+
+
+    
+    </form>
+</body>
+</html>

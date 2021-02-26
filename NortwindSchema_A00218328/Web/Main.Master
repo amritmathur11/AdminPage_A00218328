@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Web.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Cloth House</title>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="css/MyStyle.css" rel="stylesheet" />
+    <script src="js/bootstrap.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+            <div class="row WebColor">
+                <div class="container">
+                    <div class="row" style="padding-top: 10px; padding-bottom: 10px;">
+                        <div class="col-md-7">
+                            <div class="form-group">
+                                <div class="col-sm-10">
+
+                                   <%-- <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">SEARCH</div>
+                                        <asp:TextBox ID="txt_search" ValidationGroup="search" placeholder="ITEM" class="form-control" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator Display="Dynamic" ControlToValidate="txt_search" ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please enter search item" ValidationGroup="search"></asp:RequiredFieldValidator>
+                                    </div>--%>
+                                </div>
+                                <div class="col-sm-2">
+                                   <%-- <asp:Button ValidationGroup="search" ID="btn_search" CssClass="btn btn-warning" runat="server" Text="Search" OnClick="btn_search_Click" />--%>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-md-2">
+                            <a href="cart.aspx" class="btn btn-block btn-warning"><span id="lbl_items" runat="server" class="badge">0</span> VIEW CART</a>
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="padding-bottom: 10px;">
+                        <div class="col-md-9">
+                            <ul id="main" class="nav nav-pills">
+                                <li role="presentation"><a href="Default.aspx">HOME</a></li>
+                               
+                            </ul>
+                        </div>
+
+
+
+                        <div class="col-md-3 text-right">
+                            <div id="btn_logout" visible="false" runat="server">
+
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Welcome:
+                                        <asp:Label ID="lbl_name" runat="server" Text=""></asp:Label>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Change Password</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="login.aspx?logout=true">Logout</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+
+
+                            <asp:HyperLink NavigateUrl="~/login.aspx" ID="btn_login" CssClass="btn btn-warning" runat="server">Login</asp:HyperLink>
+                            <asp:HyperLink NavigateUrl="~/Signup.aspx" ID="btn_signup" CssClass="btn btn-warning" runat="server">Signup</asp:HyperLink>
+                            <asp:HyperLink NavigateUrl="~/VendorSignup.aspx" ID="btn_vendor" CssClass="btn btn-warning" runat="server">Supplier</asp:HyperLink>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row" style="padding-top: 20px;">
+                <div class="container">
+                    <div class="col-md-3">
+
+                        <%--<a href="tracker.aspx" class="btn btn-warning btn-block">TRACK YOUR ORDER</a>--%>
+
+                        <div class="panel panel-warning">
+                            <div class="panel-heading">
+                                All Categories
+                            </div>
+                            <div class="list-group">
+                                <asp:Literal ID="lbl_categories" runat="server"></asp:Literal>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+
+    <script src="~/lib/jquery-validation/dist/additional-methods.min.js"></script>
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
